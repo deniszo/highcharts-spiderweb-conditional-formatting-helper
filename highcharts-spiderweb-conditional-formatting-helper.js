@@ -45,7 +45,7 @@ var addChartConditionalFormatting = (function() {
     // Get the center coords by parsing the "d" attribute of Line path
     function getCenterCoords(path) {
         var matcher = /M\s+(.+)\sL/g;
-        var dAttrValue = path.attributes[1].value;
+        var dAttrValue = path.getAttribute('d');
         var match = matcher.exec(dAttrValue);
         return match[1];
     }
@@ -54,7 +54,7 @@ var addChartConditionalFormatting = (function() {
     // Get the line end coords by parsing the "d" attribute of Line path
     function getLineEndCoords(path) {
         var matcher = /L\s+(.+)/g;
-        var dAttrValue = path.attributes[1].value;
+        var dAttrValue = path.getAttribute('d');
         var match = matcher.exec(dAttrValue);
         return match[1];
     }
