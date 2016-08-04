@@ -36,7 +36,7 @@ var addChartConditionalFormatting = (function() {
                 document.createElementNS("http://www.w3.org/2000/svg", 'path');
             sector.setAttribute('d', buildPath(sectorBorderCoords[j], (j == numberOfSectors - 1 ? sectorBorderCoords[0] : sectorBorderCoords[j + 1]), webCenter, hasArc, webRadius));
             sector.setAttribute('class', 'conditional-formatting');
-            sector.setAttribute('fill', conditionalFormatting(Math.round(series[j].y * 100) / 100, j));
+            sector.setAttribute('fill', conditionalFormatting(Math.round(series[j].y * 100) / 100, j, series));
             chartAxisGroup.insertBefore(sector, chartAxisGroup.firstChild);
         }
     };
