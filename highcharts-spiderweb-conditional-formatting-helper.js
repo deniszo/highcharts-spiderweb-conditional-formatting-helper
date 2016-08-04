@@ -1,9 +1,10 @@
-var addChartConditionalFormatting = (function(document, Y) {
+var addChartConditionalFormatting = (function() {
 
     // Main function that does all the work 
     // conditionalFormatting argument accepts two arguments - (value, index) and should return the color or its RGB or HEX representation
     return function(chart, conditionalFormatting) {
 
+        if (!chart.polar) return;
         //Initial setup variables
 
         var series = chart.series[0].data,
@@ -93,4 +94,4 @@ var addChartConditionalFormatting = (function(document, Y) {
         return array.slice(index).concat(array.slice(0, index));
     }
 
-})(document, Y);
+})();
